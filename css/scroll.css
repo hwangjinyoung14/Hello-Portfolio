@@ -1,0 +1,85 @@
+
+ body {
+  margin: 0;
+  padding: 0;
+  overflow-y: hidden;
+  /* 세로 스크롤바 제거 */
+
+}
+
+section {
+  height: 100vh;
+  width: 100vw;
+  /* 창의 너비와 높이에 맞춤 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 5em;
+}
+
+#section3 {
+  background-color: #5E345E;
+}
+
+#section4 {
+  background-color: #4D4F53;
+  /* 추가된 섹션 */
+}
+
+#section5 {
+  background-color: #6E4B3E;
+  /* 추가된 섹션 */
+}
+
+#section6 {
+  background-color: #673ab7;
+  /* 추가된 섹션 */
+}
+
+nav {
+  position: fixed;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: right;
+}
+
+nav a {
+  margin-bottom: 10px;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s;
+  text-align: right;
+}
+
+nav a:hover,
+nav a.active {
+  color: #000;
+}
+
+#goToTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  width: 80px;
+  height: 40px;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s;
+  font-size: 12px;
+}
+
+#goToTop:hover {
+  background-color: #000000;
+}

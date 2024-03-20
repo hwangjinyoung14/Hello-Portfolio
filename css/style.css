@@ -1,0 +1,310 @@
+/* font */
+@font-face {
+  font-family: 'Middleschool_student';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_08@1.0/Middleschool_student.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* 공통 부분 */
+:root{
+  /* font */
+  --font-title:"Inter", sans-serif;
+  --nomal-font:'Middleschool_student';
+
+  /* color */
+  --mainColor:#2AA971;
+  --nomalColor:#111;
+  --bgColor: #F7F7F7;
+}
+
+*{font-family: var(--font-title);}
+
+html {
+  scroll-behavior: smooth;
+  background:var(--bgColor);
+}
+
+.header,
+.nav,
+.intro,
+.about_me,
+.project,
+.stack,
+.emphasize,
+.contact,
+section{
+  width: 100%;
+  max-width: 1980px;
+  margin: auto;
+}
+
+/* intro */
+.intro{
+  height: 100vh;
+  text-align: center;
+  overflow: hidden;
+}
+
+.fixe_box{
+  width: 800px;
+  height: 546px;
+  position: absolute;
+  margin: auto;
+  top: 54%;
+  left: 50%;
+  transform: translate(-54%, -50%);
+}
+
+.typing{
+  width: 100%;
+  font-size: 5.5rem;
+  font-weight: 900;
+  position: absolute;
+  left: 50%;
+  bottom: 105%;
+  transform: translateX(-48%);
+  z-index: 10;
+}
+
+.typing.gone_ani{
+  animation-name: Gone;
+  animation-duration: .8s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes Gone {
+  50%{bottom: 100%;}
+  100%{bottom: 130%; opacity: 0;}
+}
+
+.typing::after {
+  content: '';
+  margin-left: 1.3rem;
+  border-right: 4px solid var(--bgColor);
+  animation: cursor .9s infinite steps(2);
+}
+
+@keyframes cursor {
+  100%{border-right: 4px solid var(--nomalColor);}
+}
+
+.speech_bubble{
+  display: none;
+  width: 326px;
+  height: 165px;
+  position: absolute;
+  top: 4.5rem;
+  right: -11rem;
+  padding: 2.5rem 0 0 1rem;
+  background:url(../images/speech_bubble.png) no-repeat;
+  z-index: 30;
+}
+
+.speech_bubble.veiw_bubble{display: block;}
+
+.speech_bubble.gone_ani2{
+  animation-name: Gone2;
+  animation-duration: .8s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes Gone2 {
+  50%{top: 6rem;}
+  100%{top: -3rem; opacity: 0;}
+}
+
+.bubble_typing{
+  font-family: var(--nomal-font);
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--nomalColor);
+}
+
+.entering{
+  opacity: 0;
+  visibility: hidden;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  margin: 0.6rem 1rem 0 0;
+  animation-name: view;
+  animation-duration: 0.2s;
+  animation-delay: 4s;
+  animation-fill-mode: forwards;
+  cursor: pointer;
+}
+
+@keyframes view{
+  100%{ opacity: 1; visibility: visible;}
+}
+
+.entering>img{
+  transform: translateX(3px);
+  animation: pointer 0.8s infinite steps(2);
+}
+
+@keyframes pointer{
+  100%{transform: translateX(-5px);}
+}
+
+.entering>h3{
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--mainColor);
+  margin-top: 0.2rem;
+}
+
+.entering:hover h3{text-decoration: underline;}
+
+.bg_gif{
+  width: 100%;
+  height: 100%;
+  border: 6px solid #000;
+  overflow: hidden;
+}
+
+/*intro2*/
+.intro_desc2_images{
+  width: 545px;
+  height: 363px;
+  background-image: url(../images/ticket.png);
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 180%;
+  bottom: -5rem;
+  z-index: 30;
+}
+
+.intro_desc2_images.intro2_ani{
+  animation-name: intro2_cha;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes intro2_cha {
+  100%{left: 80%;}
+}
+
+.intro_desc2_ticket{
+  width: 100%;
+  position: absolute;
+  top: 15%;
+  right: 15%;
+  bottom: 15rem;
+  z-index: 30;
+  display: none;
+}
+
+.intro_desc2_ticket.ticket_veiw{
+  display: block;
+}
+
+.ticket_ani.release{
+  position: absolute;
+  top: 9%;
+  right: 15%;
+  transform: rotate(15deg);
+}
+
+.intro_desc2_ticket_wrap{
+  display: flex;
+}
+
+.ticket_ani2{
+  display: none;
+  transform: translate(482px, -327px);
+}
+
+.ticket_ani2.release2{
+  display: block;
+}
+
+.speech_bubble2{
+  display: none;
+  width: 326px;
+  height: 206px;
+  position: absolute;
+  top: 3.5rem;
+  right: -17rem;
+  background:url(../images/speech_bubble2.png) no-repeat;
+  z-index: 30;
+}
+
+.speech_bubble2.veiw_bubble2{display: block;}
+
+.bubble_typing2{
+  font-family: var(--nomal-font);
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--nomalColor);
+  margin: 2.8rem 0 0.5rem;
+}
+
+.speech_bubble2>.entering{
+  animation-delay: 6s;
+}
+
+.speech_bubble3{
+  display: none;
+  width: 326px;
+  height: 182px;
+  position: absolute;
+  top: 6rem;
+  right: -17rem;
+  background:url(../images/speech_bubble3.png) no-repeat;
+  z-index: 30;
+}
+
+.speech_bubble3.veiw_bubble3{display: block;}
+
+
+.bubble_typing3{
+  font-family: var(--nomal-font);
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--nomalColor);
+  margin: 2.5rem 0 0.5rem;
+  transform: translateX(-2%);
+}
+
+.speech_bubble4{
+  display: none;
+  width: 326px;
+  height: 182px;
+  position: absolute;
+  top: 6rem;
+  right: -17rem;
+  background:url(../images/speech_bubble4.png) no-repeat;
+  z-index: 30;
+}
+
+.speech_bubble4.veiw_bubble4{display: block;}
+
+
+.bubble_typing4{
+  font-family: var(--nomal-font);
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--nomalColor);
+  margin: 2.5rem 0 0.5rem;
+  transform: translateX(-2%);
+}
+
+.speech_bubble4>.entering{
+  animation-delay: 2.2s;
+}
+
+.entering>h3>a{
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--mainColor);
+  margin-top: 0.1rem;
+}
+
+/*섹션*/
+
+#section2{
+  background: url(../images/예시1.png) no-repeat center center;
+}
