@@ -1,4 +1,5 @@
 /*intro1*/
+
 function title(){
   const text = document.querySelector(".typing");
   // Text to be typed
@@ -70,8 +71,6 @@ function subTitle(){
   setTimeout(typing, 1400);
 }
 
-title();
-setTimeout(subTitle, 5000);
 
 /*intro2로 넘어가기*/
 function subTitle2(){
@@ -132,7 +131,6 @@ function introGone(){
   });
 }
 
-introGone();
 
 /**쿠폰 생성*/
 function subTitle3(){
@@ -196,7 +194,6 @@ function intromiddle(){
   });
 }
 
-intromiddle();
 
 /**쿠폰 클릭 및 intro-end */
 function subTitle4(){
@@ -256,7 +253,20 @@ function introLast(){
   });
 }
 
+
+document.addEventListener('DOMContentLoaded', 
+function intro(){
+  
+title();
+setTimeout(subTitle, 5000);
+introGone();
+intromiddle();
 introLast();
+  
+});
+
+intro();
+
 
 
 
