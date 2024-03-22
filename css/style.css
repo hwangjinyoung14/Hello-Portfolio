@@ -406,6 +406,10 @@ nav a:hover{color: #000;}
   background: url(../images/예시2.png) no-repeat center center;
 }
 
+#section4{
+  background: url(../images/예시3.png) no-repeat center center;
+}
+
 /* about_me */
 .about_me{
   display: flex;
