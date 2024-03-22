@@ -6,16 +6,20 @@
   font-style: normal;
 }
 
+@import url('https://webfontworld.github.io/pretendard/Pretendard.css');
+/* font-family: 'Pretendard'; */
+
 /* 공통 부분 */
 :root{
   /* font */
   --font-title:"Inter", sans-serif;
   --nomal-font:'Middleschool_student';
+  --pretendard-font:'Pretendard';
 
   /* color */
   --mainColor:#2AA971;
   --nomalColor:#111;
-  --bgColor: #F7F7F7;
+  --bgColor: #FDFDFD;
 }
 
 *{font-family: var(--font-title);}
@@ -23,10 +27,12 @@
 html {
   scroll-behavior: smooth;
   background:var(--bgColor);
+  overflow: hidden;
 }
 
+/**/
 .header,
-.nav,
+.side_nav,
 .intro,
 .about_me,
 .project,
@@ -35,8 +41,99 @@ html {
 .contact,
 section{
   width: 100%;
-  max-width: 1980px;
+  max-width: 1920px;
   margin: auto;
+}
+
+/* nav */
+.side_nav{
+  width: 466px;
+  height: 100%;
+  background: url(../images/nav_bg.svg) no-repeat;
+  position: fixed;
+  right: -466px;
+  z-index: 40;
+  padding: 14rem 3rem 0 0;
+  text-align: right;
+  color: var(--mainColor);
+  box-sizing: border-box;
+  transition: 0.5s;
+}
+
+.side_nav.right468{right: 0;}
+
+nav a{
+  display: block;
+  margin-bottom: 37px;
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--mainColor);
+  transition: color 0.4s;
+}
+
+nav a:last-child{
+  margin-bottom: 0;
+}
+
+nav a:hover{color: #000;}
+
+.trigger{
+  display: none;
+  width: 50px;
+  height: 40px;
+  position: fixed;
+  top: 3.5rem;
+  right: 3rem;
+  cursor: pointer;
+  z-index: 50;
+}
+
+.trigger_inner{
+  width: 100%;
+  height: 100%;
+}
+
+.trigger span{
+  position: absolute;
+  right: 0px;
+  height: 4px;
+  background-color: var(--mainColor);
+  width: 100%;
+  transition: .3s;
+}
+
+.trigger span:nth-child(1){top: 0;}
+.trigger span:nth-child(2){top: 50%; transform: translateY(-50%);}
+.trigger span:nth-child(3){bottom: 0;}
+
+/* 트리거에 클래스 추가시 x표시로 변경 */
+.trigger.triggerX span:nth-child(1){
+  top: 50%;
+  transform:translateY(-50%) rotate(45deg);
+}
+
+.trigger.triggerX span:nth-child(2){
+  opacity: 0;
+}
+
+.trigger.triggerX span:nth-child(3){
+  bottom: 50%;
+  transform: translateY(50%) rotate(-45deg);
+}
+
+.nav_info_box{
+  margin-top: 17rem;
+}
+
+.nav_info_box>h5{
+  margin: 0.6rem 0 0.2rem;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.nav_info_box>h6{
+  font-size: 16px;
+  font-weight: 300;
 }
 
 /* intro */
@@ -305,6 +402,163 @@ section{
 
 /*섹션*/
 
-#section2{
-  background: url(../images/예시1.png) no-repeat center center;
+#section3{
+  background: url(../images/예시2.png) no-repeat center center;
 }
+
+/* about_me */
+.about_me{
+  display: flex;
+  align-items: center;
+  padding-left: 166px;
+  position: relative;
+}
+
+.about_me_left{
+  width: 337px;
+  height: 100%;
+  background: url(../images/about_me/left_bg.png) no-repeat center center;
+}
+
+.about_me_right{
+  margin-left: 90px;
+}
+
+.about_me_right>h2{
+  font-size: 65px;
+  font-weight: 600;
+  color: #D2ECE1;
+  position: absolute;
+  top: 7rem;
+  right: 13rem;
+}
+
+.about_me_right_title{
+  position: relative;
+  margin-top: 300px; 
+  opacity: 0;
+  visibility: hidden;
+  transition: .6s;
+}
+
+.about_me_right_title.marginTop250{
+  margin-top: 250px;
+  opacity: 1;
+  visibility: visible;
+}
+
+.about_me_right_title>h3{
+  font-size: 19px;
+  font-weight: 300;
+  margin-bottom: 36px;
+  position: relative;
+  z-index: 10;
+}
+
+.marker{
+  width: 0;
+  height: 16px;
+  display: block;
+  background: #BEEABE;
+  border-radius: 10px;
+  position: absolute;
+  top: 70px;
+  left: 45px;
+}
+
+.marker.markerAni{
+  animation-name: marker;
+  animation-duration: .8s;
+  animation-delay: .6s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes marker{
+  100%{width: 198px;}
+}
+
+
+.about_me_right_title h3{
+  font-size: 34px;
+  font-weight: 600;
+  font-family: var(--pretendard-font);
+  line-height: 2.8rem;
+}
+
+.about_me_right_title p{
+  font-size: 19px;
+  font-weight: 300;
+  font-family: var(--pretendard-font);
+  line-height: 2rem;
+}
+
+.about_me_right_title p:nth-child(3){
+  margin: 1rem 0 1rem;
+}
+
+.more_info{
+  width: 231px;
+  height: 54px;
+  margin-top: 1.8rem;
+  text-align: center;
+  line-height: 54px;
+  background: url(../images/about_me/more.png) no-repeat center center;
+  background-size: cover;
+  transition: .4s;
+  cursor: pointer;
+}
+
+.more_info:hover{
+  transform: translateY(-5px);
+}
+
+.more_info>h5{
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--mainColor);
+}
+
+/* about_me modal */
+.about_me_modal{
+  display: none;
+  width: 1440px;
+  height: 682px;
+  position: absolute;
+  top: 175px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 50px 60px;
+  box-sizing: border-box;
+  font-family: var(--pretendard-font);
+  border: 3px solid #000;
+  background: var(--bgColor);
+  z-index: 30;
+}
+
+.about_me_modal>h4{
+  float: left;
+  font-size: 25px;
+  font-weight: 800;
+  color: var(--mainColor);
+}
+
+.modal_close_btn{float: right;}
+
+.about_me_modal_contents{
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 100px;
+}
+
+.modal_contents_left>h6{
+  margin-bottom: 0.4rem;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.contents_right_top h3{
+border: 1px solid #000;
+}
+
+
+

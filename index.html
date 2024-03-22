@@ -15,6 +15,25 @@
 
 </head>
 <body>
+  <div class="trigger">
+    <div class="trigger_inner">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+  <div class="side_nav">
+    <nav>
+      <a href="#section1">INTRO</a>
+      <a href="#section2">ABOUT ME</a>
+      <a href="#section3">SKILLS</a>
+      <a href="#section5">PROJECT</a>
+      <a href="#section6">CONTACT</a>
+    </nav>
+    <div class="nav_info_box">
+      <img src="images/nav_cha.png" alt="바꾸기">
+      <h5>Hello, Portfolio</h5>
+      <h6>toriri030@gmail.com</h6>
+    </div>
+  </div>
   <main>
     <section id="section1" class="intro">
       <div class="fixe_box">
@@ -64,24 +83,100 @@
         </div>
       </div>
     </section>
-    <section id="section2"></section>
+    <section id="section2" class="about_me">
+      <div class="about_me_left">
+      </div>
+      <div class="about_me_right">
+        <h2>Life is either a daring<br>adventure or nothing</h2>
+        <div class="about_me_right_title">
+          <h3>안녕하세요. 무궁무진한 상상력으로<br>늘 ‘새로움’을 시도해 나가는<br>프론트앤드 개발자 황진영입니다.</h3>
+          <span class="marker"></span>
+          <p>
+            동화책 “누가 내 머리에 똥 쌌어?”를 아시나요? 제가 두더지 캐릭터로 포트폴리오를 소개한 이유는<br>
+            바로 동화책의 주인공이 ‘두더지’이기 때문입니다. 책 제목 그대로 주인공은 자신의 머리에 똥을 싼 범인을<br>
+            찾아 나서는데요, 계속되는 허탕에 포기할 법도 하지만 오히려 자신이 아니라는 증거를 보여주는 다른 동물들의<br>
+            똥을 보고 놀라움과 호기심을 감추지 못하는 모습을 보이곤 계속해서 범인을 찾아 나섭니다.
+          </p>
+          <p>
+            그렇게 끈질기게 범인을 찾아헤매던 두더지는 파리들의 도움을 받아 누가 자신의 머리에 똥을 쌌는지 알게 되고 동화책은<br>
+            마무리됩니다. 저 또한 개발하는 과정에서 문제가 생겼을 때 포기하지 않고 해결해 나아감과 동시에 지식이 쌓이는 과정을<br>
+            즐겁고 소중하게 생각하며 함께 일하는 분들과의 소통과 협력을 통해 문제를 차근차근 해결해나가는 모습을 보여 드리겠습니다.
+          </p>
+          <div class="more_info">
+            <h5>제가 궁금하신가요?</h5>
+          </div>
+        </div>
+      </div>
+      <div class="about_me_modal">
+        <h4>Hwang jinyoung</h4>
+        <img class="modal_close_btn" src="images/about_me/modal_close.svg" alt="close_btn">
+        <div style="clear: both;"></div>
+        <div class="about_me_modal_contents">
+          <div class="modal_contents_left">
+            <h6>#INTP #과정중시 #모험</h6>
+            <div class="image_box">
+              <img src="images/about_me/modal_img.png" alt="내사진 바꾸기">
+            </div>
+          </div>
+          <div class="modal_contents_right">
+            <div class="contents_right_top">
+              <div class="contents_right_first">
+                <h3>황진영</h3>
+                <p>1997.05.14</p>
+                <h3>HOBBY</h3>
+                <p>독서, 배드민턴, 등산</p>
+              </div>
+              <div class="contents_right_second">
+                <h3>PERSONALITY</h3>
+                <div class="personality_boxes">
+                  <div class="personality_box">
+                    <h6>내향적</h6>
+                    <span></span>
+                    <h6>외향적</h6>
+                  </div>
+                  <div class="personality_box">
+                    <h6>수동적</h6>
+                    <span></span>
+                    <h6>활동적</h6>
+                  </div>
+                  <div class="personality_box">
+                    <h6>분석적</h6>
+                    <span></span>
+                    <h6>창의적</h6>
+                  </div>
+                </div>
+              </div>
+              <div class="contents_right_three">
+                <h3>EDUCATION</h3>
+                <ul>
+                  <li>2016 일신여자고등학교 졸업</li>
+                  <li>2020 건양대학교 시각디자인과 졸업</li>
+                  <li>2024 그린아트컴퓨터 학원 수료</li>
+                </ul>
+              </div>
+            </div>
+            <div class="contents_right_bottom">
+              <div class="sns_info_box">
+                <img src="images/about_me/git_icon.svg" alt="git_icon">
+                <p>깃허브 바로가기</p>
+              </div>
+              <div class="sns_info_box">
+                <img src="images/about_me/notion_icon.svg" alt="notion_icon">
+                <p>노션 바로가기</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <section id="section3"></section>
     <section id="section4"></section>
     <section id="section5"></section>
     <section id="section6"></section>
   </main>
 
-  <nav>
-    <a href="#section1" class="active">Intro</a>
-    <a href="#section2">About me</a>
-    <a href="#section3">Skill</a>
-    <a href="#section4">Portfolio01</a>
-    <a href="#section5">Portfolio02</a>
-    <a href="#section6">Epilogue</a>
-  </nav>
-  <button id="goToTop">고투탑</button>
-
   <script src="script/scroll.js"></script>
+  <script src="script/custom.js"></script>
   <script src="script/intro.js"></script>
 </body>
 

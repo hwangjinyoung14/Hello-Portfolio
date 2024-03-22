@@ -80,15 +80,15 @@
       }
 
       // 활성 내비게이션 링크 설정 함수
-      function activateNavLink(index) {
-        navLinks.forEach(function (link, i) {
-          if (i === index) {
-            link.classList.add('active'); // 선택된 링크에 활성 클래스 추가
-          } else {
-            link.classList.remove('active'); // 선택되지 않은 링크의 활성 클래스 제거
-          }
-        });
-      }
+      // function activateNavLink(index) {
+      //   navLinks.forEach(function (link, i) {
+      //     if (i === index) {
+      //       link.classList.add('active'); // 선택된 링크에 활성 클래스 추가
+      //     } else {
+      //       link.classList.remove('active'); // 선택되지 않은 링크의 활성 클래스 제거
+      //     }
+      //   });
+      // }
 
       // 스크롤 이벤트 리스너
       window.addEventListener('scroll', function () {
@@ -102,23 +102,7 @@
             currentSection = index;
           }
         });
-        activateNavLink(currentSection); // 현재 활성화된 섹션에 해당하는 내비게이션 링크 활성화
       });
-
-      // "고투탑" 버튼 클릭 이벤트 리스너
-      const goToTopButton = document.getElementById('goToTop');
-      goToTopButton.addEventListener('click', function () {
-        scrolling = true;
-        // 페이지 맨 위로 스무스하게 스크롤
-        window.scrollTo({
-          top: 0,
-          behavior: 'smooth'
-        });
-        setTimeout(function () {
-          scrolling = false;
-        }, 1000); // 스크롤 후 1초 후에 다시 스크롤 가능하도록 설정
-      });
-
     });
 
   // ***사용된 주요 자바스크립트 함수
