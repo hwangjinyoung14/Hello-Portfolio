@@ -1,25 +1,32 @@
 /**scroll */
 function navScroll(){
-
-  /**
-   * 1. nav바 생기기
-   */
-
   document.addEventListener('DOMContentLoaded', function(){
     const windowSection = window;
     const aboutMeTitle = document.querySelector('.about_me_right_title');
     const marker = document.querySelector('.marker');
     const trigger = document.querySelector('.trigger');
     const aboutMe = document.querySelector('.about_me');
+    const project = document.querySelector('.project');
+    const mockupGif = document.querySelector('.project_right-gif');
     const aboutMeTOP = aboutMe.offsetTop;
+    const projectTOP = project.offsetTop;
   
     window.addEventListener('scroll',function(){
     if(windowSection.scrollY >= aboutMeTOP){
       aboutMeTitle.classList.add('marginTop250');
       marker.classList.add('markerAni');
       trigger.style.display ='block'
+    }else{
+      aboutMeTitle.classList.remove('marginTop250');
+      marker.classList.remove('markerAni');
     }
     });
+
+    window.addEventListener('scroll',function(){
+      if(windowSection.scrollY >= projectTOP){
+        mockupGif.style.backgroundImage = `url(./images/project/Animation.gif)`;
+      }
+      });
   });
   
 }
