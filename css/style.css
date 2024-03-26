@@ -43,7 +43,8 @@ body{
 .emphasize,
 .contact,
 section{
-  width: 100%;
+  width: 100vw;
+  height: 100vh;
   max-width: 1920px;
   margin: auto;
 }
@@ -78,7 +79,8 @@ nav a:last-child{
   margin-bottom: 0;
 }
 
-nav a:hover{color: #000;}
+nav a:hover,
+nav a.active{color: #000;}
 
 .trigger{
   display: none;
@@ -402,12 +404,6 @@ nav a:hover{color: #000;}
   margin-top: 0.1rem;
 }
 
-/*섹션*/
-
-#section4{
-  background: url(../images/예시3.png) no-repeat center center;
-}
-
 /* about_me */
 .about_me{
   display: flex;
@@ -479,7 +475,6 @@ nav a:hover{color: #000;}
 @keyframes marker{
   100%{width: 198px;}
 }
-
 
 .about_me_right_title h3{
   font-size: 34px;
@@ -703,8 +698,14 @@ nav a:hover{color: #000;}
 .project_wrap{
   width: 94%;
   display: flex;
-  gap: 4rem;
-  margin: 100px 0 0 7rem;
+  gap: 2rem;
+  margin: 100px auto 0;
+  padding-left: 4rem;
+  box-sizing: border-box;
+}
+
+.project_wrap_innerText{
+  display: flex;
 }
 
 .project_left{width: 680px;}
@@ -827,15 +828,156 @@ nav a:hover{color: #000;}
   position: absolute;
   top: 114px;
   left: 135px;
-  background: url(../images/project/Animation.gif) no-repeat top;
+  background: url(../images/project/Animation2.gif) no-repeat top;
   background-size: cover;
   overflow: hidden;
 }
 
 .project_nav{
   width: 130px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 0.7rem;
+  margin-bottom: 63px;
 }
 
+.project_nav li{
+  height: 45px;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 45px;
+  color: var(--mainColor);
+}
+
+.project_nav li:nth-child(1){
+  width: 82px;
+  background: url(../images/project/list_bg1.svg) no-repeat center center;
+}
+
+.project_nav li:nth-child(2){
+  width: 132px;
+  background: url(../images/project/list_bg2.svg) no-repeat center center;
+}
+
+.project_nav li:nth-child(3){
+  width: 104px;
+  background: url(../images/project/list_bg3.svg) no-repeat center center;
+}
+
+.project_nav li:nth-child(4){
+  width: 90px;
+  background: url(../images/project/list_bg4.svg) no-repeat center center;
+}
+
+/* sub_project */
+.side_project{
+    background:url(../images/side_project/bg.png);
+    transition:1s;
+    position: relative;
+}
+
+.slider{
+  display:flex;
+  align-items:flex-start;
+  position:absolute;
+  height:400px;
+  top:calc(50% - 250px);
+  left:10vw;
+  transition:transform .3s;
+  box-sizing: border-box;
+}
+
+.slider li{
+  width: 308px;
+  height: 100%;
+  flex:none;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  position:relative;
+  margin:0 200px 0 0;
+  border:2px solid black;
+}
+
+.slider li::before{
+  content: '';
+  width: 104%;
+  height: 103%;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #A4825A;
+  border: 2px solid #000;
+}
+
+.slider li::after{
+  content: '';
+  width: 65px;
+  height: 34px;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 107%;
+  background: url(../images/side_project/exhibition_content_Tack.png) no-repeat center center;
+}
+
+/*     
+.slider li:nth-child(2n){top:-10%;}
+.slider li:nth-child(3n){top: 12%;}
+*/
+
+.slider li .side_project_content{
+  width: 100%;
+  height: 100%;
+  position:relative;
+  z-index:5;
+  background:rgba(255,255,255,.5);
+  background:url(../images/side_project/exhibition_content.png) no-repeat top center;
+  background-size: cover;
+  border: 2px solid #000;
+}
+
+.mouse_pointer{
+  display: none;
+  width:100%;
+  height:100%;
+  position:absolute;
+  left:0;
+  top:0;
+  z-index: 20;
+  background:var(--mainColor);
+  border-left: 2px solid #000;
+  border-right: 2px solid #000;
+  box-sizing: border-box;
+}
+
+.slider li:hover .mouse_pointer{
+  display: block;
+}
+
+/*  */
+#indicator{
+  position:absolute;
+  left:50%;
+  bottom:10%;
+  transform:translateX(-50%);
+  width:30%; height:6px;
+  background:#eee;
+  border: 2px solid #000;
+}
+
+#indi_bar{
+  position:absolute;
+  left:0;top:0;
+  height:100%;width:100%;
+  background:var(--mainColor);
+  clip-path:polygon(0% 0%, 10px 0%, 10px 100%, 0% 100%);
+  transition:all .2s;}
 
 
 

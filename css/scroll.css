@@ -7,20 +7,6 @@
 
 }
 
-section {
-  width: 100vw;
-  height: 100vh;
-}
-
-#section3 {
-  background-color: #5E345E;
-}
-
-#section4 {
-  background-color: #4D4F53;
-  /* 추가된 섹션 */
-}
-
 #section5 {
   background-color: #6E4B3E;
   /* 추가된 섹션 */
