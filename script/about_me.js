@@ -21,14 +21,7 @@ function navScroll(){
       marker.classList.remove('markerAni');
     }
     });
-
-    window.addEventListener('scroll',function(){
-      if(windowSection.scrollY >= projectTOP){
-        mockupGif.style.backgroundImage = `url(./images/project/Animation.gif)`;
-      }
-      });
   });
-  
 }
 
 function aboutModal(){
@@ -60,7 +53,7 @@ function trigger(){
   });
 }
 
-trigger()
+trigger();
 
 
 

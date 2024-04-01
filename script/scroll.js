@@ -1,20 +1,32 @@
-  // 모든 섹션과 내비게이션 링크를 선택
+    // 모든 섹션과 내비게이션 링크를 선택
   const sections = document.querySelectorAll('section');
   const navLinks = document.querySelectorAll('nav a');
+  let timer = null
 
   // 현재 활성화된 섹션의 인덱스를 저장하는 변수
   let currentSectionIndex = 0;
+  let enableVerticalScroll = true // 스크롤 중인지 여부를 나타내는 변수
+  let prevSectionIndex = 0 // 이전 섹션에 대한 인덱스 값 
+  let isHorizontal = false // 가로스크롤링 여부 
 
-  // 스크롤 중인지 여부를 나타내는 변수
-  let scrolling = false;
+  function enableHorizontalScrolling(){
+    if(currentSectionIndex === 3){
+      console.log("가로스크롤링 활성화")
+      isHorizontal = true 
+      prevSectionIndex = 0 // 다시 세로 스크롤링 재개
+    }
+  }
 
   // 다음 섹션으로 스크롤하는 함수
   function scrollToNextSection() {
-    scrolling = true;
+    console.log("다음 섹션으로 이동")
+    enableVerticalScroll = false;
+    prevSectionIndex = currentSectionIndex
     currentSectionIndex++;
     if (currentSectionIndex >= sections.length) {
       currentSectionIndex = 0;
     }
+  
     // 다음 섹션으로 스무스하게 스크롤
     sections[currentSectionIndex].scrollIntoView({
       behavior: 'smooth'
@@ -23,11 +35,13 @@
 
   // 이전 섹션으로 스크롤하는 함수
   function scrollToPreviousSection() {
-    scrolling = true;
+    enableVerticalScroll = false;
+    prevSectionIndex = currentSectionIndex
     currentSectionIndex--;
     if (currentSectionIndex < 0) {
       currentSectionIndex = sections.length - 1;
     }
+    
     // 이전 섹션으로 스무스하게 스크롤
     sections[currentSectionIndex].scrollIntoView({
       behavior: 'smooth'
@@ -36,22 +50,47 @@
 
   // 마우스 휠 스크롤 이벤트 리스너
   document.addEventListener('wheel', function (event) {
-    if (!scrolling) { // 스크롤 중이 아닌 경우에만 실행
-      if (event.deltaY > 0) { // 마우스 휠이 아래로 스크롤될 때
-        if (currentSectionIndex === sections.length - 1) {
-          // 현재 섹션이 마지막 섹션인 경우 스크롤 이벤트 무시
-          return;
+    event.stopPropagation();
+    enableHorizontalScrolling();
+
+    if (enableVerticalScroll) { // 스크롤 중이 아닌 경우에만 실행
+      if (isHorizontal) { // 스크롤 중이 아닌 경우에만 실행
+        console.log("가로 스크롤링 시작")
+        if(event.deltaY < 0 && s_pos >= 0){
+            setTimeout(()=>{
+              sideProject.style.top = `110%`;
+            },500);
+            return;
         }
-        scrollToNextSection(); // 다음 섹션으로 스크롤
-      } else { // 마우스 휠이 위로 스크롤될 때
-        scrollToPreviousSection(); // 이전 섹션으로 스크롤
+        move_slider(event.deltaY);
+        on_indicator();
+      }else{
+        console.log("세로 스크롤링 시작")
+        if (event.deltaY > 0) { // 마우스 휠이 아래로 스크롤될 때
+          if (currentSectionIndex === sections.length - 1) {
+            // 현재 섹션이 마지막 섹션인 경우 스크롤 이벤트 무시
+            return;
+          }
+          scrollToNextSection(); // 다음 섹션으로 스크롤
+        } else { // 마우스 휠이 위로 스크롤될 때
+          scrollToPreviousSection(); // 이전 섹션으로 스크롤
+        }
       }
-      // 스크롤 후 1초 후에 다시 스크롤 가능하도록 설정
-      setTimeout(function () {
-        scrolling = false;
+
+
+      // 스크롤이 끝난 시점을 판단함
+      if(timer !== null) {
+        clearTimeout(timer);        
+      }
+      timer = setTimeout(function() {
+        console.log("스크롤 끝남")
+        enableVerticalScroll = true;  
       }, 1000);
     }
-  }); // 내비게이션 링크에 클릭 이벤트 리스너 추가
+    
+  }); 
+  
+  // 내비게이션 링크에 클릭 이벤트 리스너 추가
   navLinks.forEach(function (link, index) {
     link.addEventListener('click', function (event) {
       event.preventDefault(); // 링크 기본 동작 방지
@@ -61,7 +100,7 @@
 
   // 섹션으로 스크롤하는 함수
   function scrollToSection(index) {
-    scrolling = true;
+    enableVerticalScroll = false;
     // 해당 섹션으로 스무스하게 스크롤
     sections[index].scrollIntoView({
       behavior: 'smooth'
@@ -70,7 +109,7 @@
     currentSectionIndex = index;
     // 스크롤 후 1초 후에 다시 스크롤 가능하도록 설정
     setTimeout(function () {
-      scrolling = false;
+      enableVerticalScroll = true;
     }, 1000);
     activateNavLink(index); // 활성 내비게이션 링크 클래스 추가
   }
@@ -100,6 +139,7 @@
     });
     activateNavLink(currentSection); // 현재 활성화된 섹션에 해당하는 내비게이션 링크 활성화
   });
+
    
 
   // ***사용된 주요 자바스크립트 함수

@@ -19,19 +19,19 @@ const animalSystem = {
   projectDesc2 :["1명(기여도100%)", "기획/개발", "Visual Studio Code, 피그마"],
   skills : ["HTML5", "CSS3", "JavaScript"],
   address : ["https://github.com/hwangjinyoung14/sidmool.git", "https://hwangjinyoung14.github.io/sidmool/"],
-  images : "images/project/mockup.png"
+  images : "images/project/mockup2.png"
 }
 
 const bestSleep = {
   topTitle : "팀 프로젝트",
-  date : "2024.01 - 2023.3",
+  date : "2024.01 - 2023.03",
   projectNum : "PROJECT 03",
   projectTitle : "베스트 슬립",
   projectDesc : "사용자에게 더 나은 환경 서비스를 제동하기 위해 프로젝트를 제작했습니다.<br>불필요한 섹션은 과감히 삭제하고 장바구니 넣기, 다양한 체험 및 프로그램 생사를<br>불필요한 섹션은 과감히 삭제하고 장바구니 넣기, 다양한 체험 및 프로그램 생사를<br>추가하여 전체적인 홈페이지 가독성을 높이고자 했으며 기본에 충실했습니다.",
   projectDesc2 :["3명(기여도40%)", "기획/개발", "Visual Studio Code, 피그마"],
   skills : ["HTML5", "SCSS", "JavaScript"],
   address : ["https://github.com/hwangjinyoung14/sidmool.git", "https://hwangjinyoung14.github.io/sidmool/"],
-  images : "images/project/mockup.png"
+  images : "images/project/mockup3.png"
 }
 
 const cpgn = {
@@ -43,7 +43,7 @@ const cpgn = {
   projectDesc2 :["1명(기여도100%)", "기획/개발", "Visual Studio Code, 피그마"],
   skills : ["React"],
   address : ["https://github.com/hwangjinyoung14/sidmool.git", "https://hwangjinyoung14.github.io/sidmool/"],
-  images : "images/project/mockup.png"
+  images : "images/project/mockup4.png"
 }
 
 function projectInner(item) {
@@ -92,7 +92,6 @@ function projectInner(item) {
       </div>
     </div>
     <div class="project_right">
-      <div class="project_right-gif"></div>
       <img src="${item.images}" alt="mockup">
     </div>
   `;
@@ -109,6 +108,7 @@ projectNav[0].addEventListener('click', function(){
 
 projectNav[1].addEventListener('click', function(){
   projectWrapText.innerHTML = projectInner(animalSystem);
+  
 });
 
 projectNav[2].addEventListener('click', function(){

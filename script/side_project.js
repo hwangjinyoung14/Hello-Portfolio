@@ -17,27 +17,20 @@ project.addEventListener('wheel',function(e){
     }
 });
 
-sideProject.addEventListener('wheel',function(e){
-    e.preventDefault;
-    if(e.deltaY < 0 && s_pos >= 0){
-        setTimeout(()=>{
-          sideProject.style.top = `100%`;
-        },500);
-        return;
-    }
-    move_slider(e.deltaY);
-    on_indicator();
-});
-
 function move_slider(amount){
-    scrolling =true;
     s_pos -= amount;
     if(s_pos < s_move_max){
         s_pos = s_move_max;
-        scrolling =false;
+        isHorizontal = false 
+        enableVerticalScroll = true;
+        console.log("가로스크롤 끝")
+        scrollToNextSection();
         return;
+
     }else if(s_pos > 0){
-        s_pos = 0;
+        console.log("가로스크롤 초기화")
+        isHorizontal = false 
+        scrollToPreviousSection();
         return;
     }
     slider.style.transform = `translateX(${s_pos}px)`;
@@ -63,44 +56,44 @@ function on_indicator(){
 }
 
 /* 끝을 감지하여 그 이후에 세로 스크롤을 적용하는 로직*/
-document.addEventListener('wheel', function (event) {
-if (Math.abs(event.deltaX) > Math.abs(event.deltaY)) {
-    event.preventDefault(); 
+// document.addEventListener('wheel', function (event) {
+// if (Math.abs(event.deltaX) > Math.abs(event.deltaY)) {
+//     event.preventDefault(); 
 
-    if (!scrolling) { 
-        if (event.deltaX < 0) {
-            enableVerticalScroll();
-        } else if (event.deltaX > 0 && isVerticalScrollEnabled()) {
-            disableVerticalScroll();
-        }
-    }
-    } else {
-        if (!scrolling) { 
-            if (event.deltaY > 0) { 
-                if (currentSectionIndex === sections.length - 1) {
-                    return;
-                }
-                scrollToNextSection(); 
-            } else {
-                scrollToPreviousSection();
-            }
-            setTimeout(function () {
-                scrolling = false;
-            }, 1000);
-        }
-    }
-});
+//     if (!enableVerticalScroll) { 
+//         if (event.deltaX < 0) {
+//             enableVerticalScroll();
+//         } else if (event.deltaX > 0 && isVerticalScrollEnabled()) {
+//             disableVerticalScroll();
+//         }
+//     }
+//     } else {
+//         if (!enableVerticalScroll) { 
+//             if (event.deltaY > 0) { 
+//                 if (currentSectionIndex === sections.length - 1) {
+//                     return;
+//                 }
+//                 scrollToNextSection(); 
+//             } else {
+//                 scrollToPreviousSection();
+//             }
+//             setTimeout(function () {
+//                 enableVerticalScroll = true;
+//             }, 1000);
+//         }
+//     }
+// });
 
-function enableVerticalScroll() {
-document.body.style.overflowY = 'auto';
-document.body.style.overflowX = 'hidden';
-}
+// function enableVerticalScroll() {
+// document.body.style.overflowY = 'auto';
+// document.body.style.overflowX = 'hidden';
+// }
 
-function disableVerticalScroll() {
-document.body.style.overflowY = 'hidden';
-}
+// function disableVerticalScroll() {
+// document.body.style.overflowY = 'hidden';
+// }
 
-function isVerticalScrollEnabled() {
-return document.body.style.overflowY === 'auto';
-}
+// function isVerticalScrollEnabled() {
+// return document.body.style.overflowY === 'auto';
+// }
 
