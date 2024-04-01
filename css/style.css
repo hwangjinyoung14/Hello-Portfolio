@@ -83,7 +83,7 @@ nav a:last-child{
 }
 
 nav a:hover,
-nav a.active{color: #000;}
+nav a.active{color: var(--nomalColor);}
 
 .trigger{
   display: none;
@@ -120,18 +120,14 @@ nav a.active{color: #000;}
   transform:translateY(-50%) rotate(45deg);
 }
 
-.trigger.triggerX span:nth-child(2){
-  opacity: 0;
-}
+.trigger.triggerX span:nth-child(2){opacity: 0;}
 
 .trigger.triggerX span:nth-child(3){
   bottom: 50%;
   transform: translateY(50%) rotate(-45deg);
 }
 
-.nav_info_box{
-  margin-top: 17rem;
-}
+.nav_info_box{ margin-top: 17rem;}
 
 .nav_info_box>h5{
   margin: 0.6rem 0 0.2rem;
@@ -178,7 +174,7 @@ nav a.active{color: #000;}
   animation-fill-mode: forwards;
 }
 
-@keyframes Gone {
+@keyframes Gone{
   50%{bottom: 100%;}
   100%{bottom: 130%; opacity: 0;}
 }
@@ -190,7 +186,7 @@ nav a.active{color: #000;}
   animation: cursor .9s infinite steps(2);
 }
 
-@keyframes cursor {
+@keyframes cursor{
   100%{border-right: 4px solid var(--nomalColor);}
 }
 
@@ -199,8 +195,8 @@ nav a.active{color: #000;}
   width: 326px;
   height: 165px;
   position: absolute;
-  top: 8.5rem;
-  right: -9rem;
+  top: 11rem;
+  right: -7.5rem;
   padding: 2.5rem 0 0 1rem;
   background:url(../images/speech_bubble.png) no-repeat;
   z-index: 30;
@@ -214,7 +210,7 @@ nav a.active{color: #000;}
   animation-fill-mode: forwards;
 }
 
-@keyframes Gone2 {
+@keyframes Gone2{
   50%{top: 6rem;}
   100%{top: -3rem; opacity: 0;}
 }
@@ -236,7 +232,7 @@ nav a.active{color: #000;}
   margin: 0.6rem 1rem 0 0;
   animation-name: view;
   animation-duration: 0.2s;
-  animation-delay: 4s;
+  animation-delay: 4.5s;
   animation-fill-mode: forwards;
   cursor: pointer;
 }
@@ -272,10 +268,8 @@ nav a.active{color: #000;}
 
 /*intro2*/
 .intro_desc2_images{
-  width: 545px;
+  width: 363px;
   height: 363px;
-  background-image: url(../images/gif04.gif);
-  background-repeat: no-repeat;
   position: absolute;
   left: 180%;
   bottom: -5rem;
@@ -283,13 +277,13 @@ nav a.active{color: #000;}
 }
 
 .intro_desc2_images.intro2_ani{
-  animation-name: intro2_cha;
+  animation-name: intro2_ani;
   animation-duration: 3s;
   animation-fill-mode: forwards;
 }
 
-@keyframes intro2_cha {
-  100%{left: 80%;}
+@keyframes intro2_ani{
+  100%{left: 70%;}
 }
 
 .intro_desc2_ticket{
@@ -348,7 +342,7 @@ nav a.active{color: #000;}
 }
 
 .speech_bubble2>.entering{
-  animation-delay: 6s;
+  animation-delay: 4.7s;
 }
 
 .speech_bubble3{
@@ -356,7 +350,7 @@ nav a.active{color: #000;}
   width: 326px;
   height: 182px;
   position: absolute;
-  top: 6rem;
+  top: 7.4rem;
   right: -17rem;
   background:url(../images/speech_bubble3.png) no-repeat;
   z-index: 30;
@@ -825,6 +819,25 @@ nav a.active{color: #000;}
   position: relative;
 }
 
+.project_right{
+  animation-name: projectAni;
+  animation-duration: 1.2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes projectAni{
+  0%{
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(7%);
+  }
+  100%{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+
 .project_right-gif{
   width: 667px;
   height: 375px;
@@ -877,9 +890,10 @@ nav a.active{color: #000;}
 
 /* sub_project */
 .side_project{
-    background:url(../images/side_project/bg.png);
-    transition:1s;
-    position: relative;
+  background:url(../images/side_project/bg.png);
+  transition:1s;
+  position: relative;
+  cursor: pointer;
 }
 
 .slider{
@@ -907,14 +921,14 @@ nav a.active{color: #000;}
 
 .slider li::before{
   content: '';
-  width: 104%;
+  width: 103%;
   height: 103%;
   display: block;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: #A4825A;
+  background: #bd9c8c;
   border: 2px solid #000;
 }
 
@@ -929,11 +943,6 @@ nav a.active{color: #000;}
   background: url(../images/side_project/exhibition_content_Tack.png) no-repeat center center;
 }
 
-/*     
-.slider li:nth-child(2n){top:-10%;}
-.slider li:nth-child(3n){top: 12%;}
-*/
-
 .slider li .side_project_content{
   width: 100%;
   height: 100%;
@@ -946,24 +955,66 @@ nav a.active{color: #000;}
 }
 
 .mouse_pointer{
-  display: none;
   width:100%;
   height:100%;
+  display: none;
   position:absolute;
   left:0;
   top:0;
   z-index: 20;
+  color: #fff;
+  text-align: center;
+  font-family: var(--pretendard-font);
+  padding-top: 8rem;
   background:var(--mainColor);
   border-left: 2px solid #000;
   border-right: 2px solid #000;
   box-sizing: border-box;
 }
 
+.mouse_pointer>h3{
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.mouse_pointer>p{
+  font-weight: 300;
+  margin: 0.7rem 0 2rem;
+}
+
+.side_project_desc a{
+  width: 156px;
+  height: 35px;
+  display: flex;
+  gap: 0.6rem;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 0.5rem;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  transition: .2s;
+}
+
+.side_project_desc a:hover{
+  color: var(--mainColor);
+  background: #fff;
+}
+
+.side_project_desc a:hover p{
+  font-weight: 500;
+}
+
+.side_project_desc a>img{
+  width: 20px;
+  height: 20px;
+  transform: translateY(-1px);
+}
+
 .slider li:hover .mouse_pointer{
   display: block;
 }
 
-/*  */
 #indicator{
   position:absolute;
   left:50%;
@@ -984,7 +1035,6 @@ nav a.active{color: #000;}
 
 
   /* contact */
-
   .contact{
     position: relative;
   }
@@ -1118,13 +1168,32 @@ nav a.active{color: #000;}
 
 /* skills */
 .skills_wrap{
+  opacity: 0;
+  visibility: hidden;
   width: 85%;
   height: 72%;
   display: flex;
   position: relative;
-  top: 58%;
   left: 50%;
   transform: translate(-50%, -58%);
+}
+
+.skills_wrap.skill_ani{
+  animation-name: skillAni;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes skillAni{
+  0%{
+    top: 63%;
+  }
+
+  100%{
+    opacity: 1;
+    visibility: visible;
+    top: 58%;
+  }
 }
 
 .skills_left,

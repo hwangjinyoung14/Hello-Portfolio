@@ -6,10 +6,10 @@ function navScroll(){
     const marker = document.querySelector('.marker');
     const trigger = document.querySelector('.trigger');
     const aboutMe = document.querySelector('.about_me');
-    const project = document.querySelector('.project');
-    const mockupGif = document.querySelector('.project_right-gif');
+    const skills = document.querySelector('.skills');
+    const skillsWrap = document.querySelector('.skills_wrap');
     const aboutMeTOP = aboutMe.offsetTop;
-    const projectTOP = project.offsetTop;
+    const skillsTOP = skills.offsetTop;
   
     window.addEventListener('scroll',function(){
     if(windowSection.scrollY >= aboutMeTOP){
@@ -20,9 +20,18 @@ function navScroll(){
       aboutMeTitle.classList.remove('marginTop250');
       marker.classList.remove('markerAni');
     }
+
+    //skill
+    if(windowSection.scrollY >= skillsTOP){
+      skillsWrap.classList.add("skill_ani");
+    }else{
+      skillsWrap.classList.remove("skill_ani");
+    }
     });
   });
+
 }
+
 
 function aboutModal(){
   const moreInfo = document.querySelector('.more_info');
