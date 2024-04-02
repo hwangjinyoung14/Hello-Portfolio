@@ -23,12 +23,10 @@ function move_slider(amount){
         s_pos = s_move_max;
         isHorizontal = false 
         enableVerticalScroll = true;
-        console.log("가로스크롤 끝")
         scrollToNextSection();
         return;
 
     }else if(s_pos > 0){
-        console.log("가로스크롤 초기화")
         isHorizontal = false 
         scrollToPreviousSection();
         return;

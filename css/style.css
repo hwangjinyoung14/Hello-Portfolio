@@ -198,7 +198,7 @@ nav a.active{color: var(--nomalColor);}
   top: 11rem;
   right: -7.5rem;
   padding: 2.5rem 0 0 1rem;
-  background:url(../images/speech_bubble.png) no-repeat;
+  background:url(../images/intro/speech_bubble.png) no-repeat;
   z-index: 30;
 }
 
@@ -283,7 +283,7 @@ nav a.active{color: var(--nomalColor);}
 }
 
 @keyframes intro2_ani{
-  100%{left: 70%;}
+  100%{left: 75%;}
 }
 
 .intro_desc2_ticket{
@@ -310,6 +310,10 @@ nav a.active{color: var(--nomalColor);}
 .intro_desc2_ticket_wrap{
   display: flex;
 }
+.intro_desc2_ticket_wrap>img:first-child{
+  position: relative;
+  left: 2px;
+}
 
 .ticket_ani2{
   display: none;
@@ -327,7 +331,7 @@ nav a.active{color: var(--nomalColor);}
   position: absolute;
   top: 3.5rem;
   right: -17rem;
-  background:url(../images/speech_bubble2.png) no-repeat;
+  background:url(../images/intro/speech_bubble2.png) no-repeat;
   z-index: 30;
 }
 
@@ -352,7 +356,7 @@ nav a.active{color: var(--nomalColor);}
   position: absolute;
   top: 7.4rem;
   right: -17rem;
-  background:url(../images/speech_bubble3.png) no-repeat;
+  background:url(../images/intro/speech_bubble3.png) no-repeat;
   z-index: 30;
 }
 
@@ -373,9 +377,9 @@ nav a.active{color: var(--nomalColor);}
   width: 326px;
   height: 182px;
   position: absolute;
-  top: 6rem;
+  top: 8rem;
   right: -17rem;
-  background:url(../images/speech_bubble4.png) no-repeat;
+  background:url(../images/intro/speech_bubble4.png) no-repeat;
   z-index: 30;
 }
 
@@ -386,7 +390,7 @@ nav a.active{color: var(--nomalColor);}
   font-size: 1.8rem;
   font-weight: 600;
   color: var(--nomalColor);
-  margin: 2.5rem 0 0.5rem;
+  margin: 2.3rem 0 0.5rem;
   transform: translateX(-2%);
 }
 
@@ -515,35 +519,32 @@ nav a.active{color: var(--nomalColor);}
 .about_me_modal{
   display: none;
   width: 1440px;
-  height: 682px;
+  height: 760px;
   position: absolute;
-  top: 165px;
+  top: 110px;
   left: 50%;
   transform: translateX(-50%);
   padding: 41px 51px;
   box-sizing: border-box;
-  border: 3px solid #000;
-  background: var(--bgColor);
+  background: url(../images/about_me/modal_bg.png) no-repeat center center;
   z-index: 30;
 }
 
-.about_me_modal_top{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.modal_close_btn{
+  position: absolute;
+  right: 20px;
+  transition: .3s;
 }
 
-.about_me_modal_top>h4{
-  font-size: 25px;
-  font-weight: 800;
-  color: var(--mainColor);
+.modal_close_btn:hover{
+  transform: rotate(90deg);
 }
 
 .about_me_modal_contents{
   display: flex;
   gap: 4.5rem;
   padding: 0 3.5rem;
-  margin-top: 118px;
+  margin-top: 260px;
   font-family: var(--pretendard-font);
 }
 
@@ -567,7 +568,7 @@ nav a.active{color: var(--nomalColor);}
 .name{
   display: flex;
   gap: 0.5rem;
-  margin: 0 0 2rem;
+  margin: 0 0 2.5rem;
 }
 
 .name p{
@@ -781,7 +782,7 @@ nav a.active{color: var(--nomalColor);}
   gap: 0.7rem;
 }
 
-.project_desc>li>p{
+.project_desc>li span{
   padding: 5px 10px;
   color: var(--mainColor);
   border: 1px solid #000;
@@ -919,6 +920,13 @@ nav a.active{color: var(--nomalColor);}
   border:2px solid black;
 }
 
+.slider li:nth-child(5),
+.slider li:nth-child(6),
+.slider li:nth-child(8){
+  width: 408px;
+  height: 60%;
+}
+
 .slider li::before{
   content: '';
   width: 103%;
@@ -930,6 +938,17 @@ nav a.active{color: var(--nomalColor);}
   transform: translate(-50%, -50%);
   background: #bd9c8c;
   border: 2px solid #000;
+}
+
+
+.slider li:nth-child(5)::before,
+.slider li:nth-child(6)::before,
+.slider li:nth-child(8)::before{
+  width: 103%;
+  height: 105%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .slider li::after{
@@ -949,9 +968,44 @@ nav a.active{color: var(--nomalColor);}
   position:relative;
   z-index:5;
   background:rgba(255,255,255,.5);
-  background:url(../images/side_project/exhibition_content.png) no-repeat top center;
+  background:url(../images/side_project/side_project_content01.png) no-repeat top center;
   background-size: cover;
   border: 2px solid #000;
+}
+
+.slider li:nth-child(2) .side_project_content{
+  background:url(../images/side_project/side_project_content02.png) no-repeat top center;
+  background-size: cover;
+}
+
+.slider li:nth-child(3) .side_project_content{
+  background:url(../images/side_project/side_project_content03.png) no-repeat top center;
+  background-size: cover;
+}
+
+.slider li:nth-child(4) .side_project_content{
+  background:url(../images/side_project/side_project_content04.png) no-repeat top center;
+  background-size: cover;
+}
+
+.slider li:nth-child(5) .side_project_content{
+  background:url(../images/side_project/side_project_content05.png) no-repeat top center;
+  background-size: cover;
+}
+
+.slider li:nth-child(6) .side_project_content{
+  background:url(../images/side_project/side_project_content06.png) no-repeat top center;
+  background-size: cover;
+}
+
+.slider li:nth-child(7) .side_project_content{
+  background:url(../images/side_project/side_project_content07.png) no-repeat top center;
+  background-size: cover;
+}
+
+.slider li:nth-child(8) .side_project_content{
+  background:url(../images/side_project/side_project_content08.png) no-repeat top center;
+  background-size: cover;
 }
 
 .mouse_pointer{
@@ -970,6 +1024,18 @@ nav a.active{color: var(--nomalColor);}
   border-left: 2px solid #000;
   border-right: 2px solid #000;
   box-sizing: border-box;
+}
+
+.slider li:nth-child(5) .mouse_pointer,
+.slider li:nth-child(6) .mouse_pointer,
+.slider li:nth-child(8) .mouse_pointer{
+  padding-top: 3.5rem;
+}
+
+.slider li:nth-child(5) .mouse_pointer>p,
+.slider li:nth-child(6) .mouse_pointer>p,
+.slider li:nth-child(8) .mouse_pointer>p{
+  margin: 0.5rem 0 0.7rem;
 }
 
 .mouse_pointer>h3{
@@ -1001,7 +1067,7 @@ nav a.active{color: var(--nomalColor);}
   background: #fff;
 }
 
-.side_project_desc a:hover p{
+.side_project_desc a:hover span{
   font-weight: 500;
 }
 
@@ -1033,10 +1099,10 @@ nav a.active{color: var(--nomalColor);}
   clip-path:polygon(0% 0%, 10px 0%, 10px 100%, 0% 100%);
   transition:all .2s;}
 
-
   /* contact */
   .contact{
     position: relative;
+    padding-top: 2rem;
   }
 
   .contact>.fixe_box{
@@ -1049,14 +1115,20 @@ nav a.active{color: var(--nomalColor);}
     transform: translateY(-50%);
     overflow: hidden;
     border: 6px solid #000;
-    background: url(../images/b3.png) no-repeat center center;
+    background: url(../images/intro/gif02.gif) no-repeat center center;
     background-size: cover;
   }
 
   .contact_right{
+    width: 363px;
+    height: 363px;
     position: absolute;
     right: 25%;
-    bottom: 20%;
+    bottom: 17%;
+    background-image: url(../images/contact/gif01.gif);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
   }
 
   .speech_bubble5{
@@ -1065,8 +1137,8 @@ nav a.active{color: var(--nomalColor);}
     width: 326px;
     height: 182px;
     position: absolute;
-    top: -9.3rem;
-    right: 0.4rem;
+    top: -5.6rem;
+    right: 4rem;
     padding: 2.5rem 1rem 0 0;
     background:url(../images/contact/speech_bubble_bg.png) no-repeat;
     z-index: 30;

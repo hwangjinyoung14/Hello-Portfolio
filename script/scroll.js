@@ -11,7 +11,6 @@
 
   function enableHorizontalScrolling(){
     if(currentSectionIndex === 3){
-      console.log("가로스크롤링 활성화")
       isHorizontal = true 
       prevSectionIndex = 0 // 다시 세로 스크롤링 재개
     }
@@ -19,7 +18,6 @@
 
   // 다음 섹션으로 스크롤하는 함수
   function scrollToNextSection() {
-    console.log("다음 섹션으로 이동")
     enableVerticalScroll = false;
     prevSectionIndex = currentSectionIndex
     currentSectionIndex++;
@@ -55,7 +53,6 @@
 
     if (enableVerticalScroll) { // 스크롤 중이 아닌 경우에만 실행
       if (isHorizontal) { // 스크롤 중이 아닌 경우에만 실행
-        console.log("가로 스크롤링 시작")
         if(event.deltaY < 0 && s_pos >= 0){
             setTimeout(()=>{
               sideProject.style.top = `110%`;
@@ -65,7 +62,6 @@
         move_slider(event.deltaY);
         on_indicator();
       }else{
-        console.log("세로 스크롤링 시작")
         if (event.deltaY > 0) { // 마우스 휠이 아래로 스크롤될 때
           if (currentSectionIndex === sections.length - 1) {
             // 현재 섹션이 마지막 섹션인 경우 스크롤 이벤트 무시
@@ -83,7 +79,6 @@
         clearTimeout(timer);        
       }
       timer = setTimeout(function() {
-        console.log("스크롤 끝남")
         enableVerticalScroll = true;  
       }, 1000);
     }

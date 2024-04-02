@@ -75,9 +75,9 @@ function projectInner(item) {
             <li>${item.projectDesc2[0]}</li>
             <li>${item.projectDesc2[1]}</li>
             <li>
-              <p>${item.skills[0]}</p>
-              <p>${item.skills[1]}</p>
-              <p>${item.skills[2]}</p>
+              ${item.skills.length > 0 ? `<span>${item.skills[0]}</span>` : ''}
+              ${item.skills.length > 1 ? `<span>${item.skills[1]}</span>` : ''}
+              ${item.skills.length > 2 ? `<span>${item.skills[2]}</span>` : ''}
             </li>
             <li>${item.projectDesc2[2]}</li>
           </ul>
@@ -100,13 +100,9 @@ function projectInner(item) {
   `;
 }
 
-
 const projectWrapText= document.querySelector('.project_wrap_innerText');
 const projectNav = document.querySelectorAll('.project_nav li');
 const projectLeftText = document.querySelector('.project_left');
-//배경이미지도 바뀌게 하기!
-
-//color 화이트로 변경하기. 배열 없애기
 
 projectNav.forEach(function(item, index) {
   item.addEventListener('click', function() {
