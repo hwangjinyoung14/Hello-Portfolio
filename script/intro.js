@@ -246,16 +246,11 @@ function introLast(){
   });
 }
 
-document.addEventListener('DOMContentLoaded', 
-function intro(){
-  
 title();
 setTimeout(subTitle, 4600);
 intro02();
 intromiddle();
 introLast();
-  
-});
 
 
 

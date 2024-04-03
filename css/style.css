@@ -56,7 +56,7 @@ section{
 .side_nav{
   width: 466px;
   height: 100%;
-  background: url(../images/nav_bg.svg) no-repeat;
+  background: url(../images/nav/nav_bg.svg) no-repeat;
   position: fixed;
   right: -466px;
   z-index: 40;
@@ -127,7 +127,11 @@ nav a.active{color: var(--nomalColor);}
   transform: translateY(50%) rotate(-45deg);
 }
 
-.nav_info_box{ margin-top: 17rem;}
+.nav_info_box{
+  width: 50%;
+  margin: 15rem 0 0 13rem;
+  text-align: center;
+}
 
 .nav_info_box>h5{
   margin: 0.6rem 0 0.2rem;
@@ -722,7 +726,7 @@ nav a.active{color: var(--nomalColor);}
 }
 
 .project_left_top>span{
-  width: 55%;
+  width: 53%;
   height: 2px;
   background: var(--nomalColor);
 }
@@ -862,11 +866,18 @@ nav a.active{color: var(--nomalColor);}
 
 .project_nav li{
   height: 45px;
+  position: relative;
   font-size: 18px;
   font-weight: 600;
   text-align: center;
   line-height: 45px;
   color: var(--mainColor);
+  cursor: pointer;
+  transition: .2s;
+}
+
+.project_nav li:hover{
+  transform: scale(0.95);
 }
 
 .project_nav li:nth-child(1){
@@ -887,6 +898,19 @@ nav a.active{color: var(--nomalColor);}
 .project_nav li:nth-child(4){
   width: 90px;
   background: url(../images/project/list_bg4.svg) no-repeat center center;
+}
+
+.project_nav_pointer{
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: -50%;
+  left: -17%;
+}
+
+.project_nav_pointer.view_pointer{
+  opacity: 1;
+  visibility: visible;
 }
 
 /* sub_project */
@@ -945,7 +969,7 @@ nav a.active{color: var(--nomalColor);}
 .slider li:nth-child(6)::before,
 .slider li:nth-child(8)::before{
   width: 103%;
-  height: 105%;
+  height: 106%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -960,6 +984,14 @@ nav a.active{color: var(--nomalColor);}
   bottom: 0;
   left: 107%;
   background: url(../images/side_project/exhibition_content_Tack.png) no-repeat center center;
+}
+
+.slider li:nth-child(5)::after,
+.slider li:nth-child(6)::after,
+.slider li:nth-child(8)::after{
+  bottom: -80px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .slider li .side_project_content{
@@ -1120,15 +1152,9 @@ nav a.active{color: var(--nomalColor);}
   }
 
   .contact_right{
-    width: 363px;
-    height: 363px;
     position: absolute;
     right: 25%;
     bottom: 17%;
-    background-image: url(../images/contact/gif01.gif);
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
   }
 
   .speech_bubble5{

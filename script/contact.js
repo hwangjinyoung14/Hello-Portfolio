@@ -41,22 +41,20 @@ function contactScroll(){
     const bubbleTyping5 = document.querySelector('.bubble_typing5');
     const contact = document.querySelector('.contact');
     const contactCard = document.querySelector('.contact_card');
-    const contactCha = document.querySelector('.contact_right');
-    console.log(contactCha);
     const contactTOP = contact.offsetTop;
 
-    window.addEventListener('scroll', function(){
-      if(windowSection.scrollY >= contactTOP){
+
+    window.addEventListener('scroll', function() {
+      if(window.scrollY >= contactTOP) {
         speechBubble5.classList.add('view_bubble5');
         contactCard.classList.add('cardUp_ani');
-        contactCha.style.backgroundImage = "url(../images/contact/gif01.gif)";
         setTimeout(subTitle5, 300);
-      } else{
+      } else {
         speechBubble5.classList.remove('view_bubble5');
         contactCard.classList.remove('cardUp_ani');
         bubbleTyping5.innerHTML = '';
       }
-      });
+    });
   });
 }
 

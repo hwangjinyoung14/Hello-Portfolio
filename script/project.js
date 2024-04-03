@@ -3,7 +3,7 @@ const sidmool = {
   date : "2023.10 - 2023.11",
   projectNum : "PROJECT 01",
   projectTitle : "시드물",
-  projectDesc : "사용자에게 더 나은 환경 서비스를 제동하기 위해 프로젝트를 제작했습니다.<br>불필요한 섹션은 과감히 삭제하고 장바구니 넣기, 다양한 체험 및 프로그램 생사를<br>불필요한 섹션은 과감히 삭제하고 장바구니 넣기, 다양한 체험 및 프로그램 생사를<br>추가하여 전체적인 홈페이지 가독성을 높이고자 했으며 기본에 충실했습니다.",
+  projectDesc : "웹사이트 디자인 수정을 통해 기존 시드물의 친환경적이고 저렴한 브랜드 이미지를<br>소비자에게 구체화시키고 정보 전달력이 떨어지는 기존 레이아웃과 눈에 띄지 않는로고를 현대 디자인 트렌드에 맞게 변경하였으며, 시드물에서 트래픽이 높은 페이지를<br>중심으로 메인 페이지를 재구성하여 소비자에게 브랜드 제품을 효율적으로<br>노출시키는 데 프로젝트 목적을 두었습니다.",
   projectDesc2 :["1명(기여도100%)", "기획/개발", "Visual Studio Code, 피그마"],
   skills : ["HTML5", "CSS3"],
   address : ["https://github.com/hwangjinyoung14/sidmool.git", "https://hwangjinyoung14.github.io/sidmool/"],
@@ -28,7 +28,7 @@ const bestSleep = {
   projectNum : "PROJECT 03",
   projectTitle : "베스트 슬립",
   projectDesc : "사용자에게 더 나은 환경 서비스를 제동하기 위해 프로젝트를 제작했습니다.<br>불필요한 섹션은 과감히 삭제하고 장바구니 넣기, 다양한 체험 및 프로그램 생사를<br>불필요한 섹션은 과감히 삭제하고 장바구니 넣기, 다양한 체험 및 프로그램 생사를<br>추가하여 전체적인 홈페이지 가독성을 높이고자 했으며 기본에 충실했습니다.",
-  projectDesc2 :["3명(기여도40%)", "기획/개발", "Visual Studio Code, 피그마"],
+  projectDesc2 :["3명(기여도35%)", "기획/개발", "Visual Studio Code, 피그마"],
   skills : ["HTML5", "SCSS", "JavaScript"],
   address : ["https://github.com/hwangjinyoung14/sidmool.git", "https://hwangjinyoung14.github.io/sidmool/"],
   images : "images/project/mockup3.png"
@@ -103,6 +103,8 @@ function projectInner(item) {
 const projectWrapText= document.querySelector('.project_wrap_innerText');
 const projectNav = document.querySelectorAll('.project_nav li');
 const projectLeftText = document.querySelector('.project_left');
+const projectNavPointer = document.querySelectorAll('.project_nav_pointer');
+
 
 projectNav.forEach(function(item, index) {
   item.addEventListener('click', function() {
@@ -128,4 +130,17 @@ projectNav.forEach(function(item, index) {
     
   });
 });
+
+for (let i = 0; i < projectNav.length; i++) {
+  projectNav[i].addEventListener('click', function() {
+    for (let j = 0; j < projectNavPointer.length; j++) { 
+      if (i !== j) {
+        projectNavPointer[j].classList.remove("view_pointer");
+      }
+      if (i === j){
+        projectNavPointer[j].classList.toggle("view_pointer");
+      }
+    }
+  });
+}
 
