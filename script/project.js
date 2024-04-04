@@ -83,11 +83,11 @@ function projectInner(item) {
           </ul>
         </div>
         <div class="project_shortcut">
-          <a class="shortcut_box" href="${item.address[0]}">
+          <a class="shortcut_box" href="${item.address[0]}" target="_blank">
             <img src="images/project/git_icon.svg" alt="git_icon">
             <p>깃허브 바로가기</p>
           </a>
-          <a class="shortcut_box" href="${item.address[1]}">
+          <a class="shortcut_box" href="${item.address[1]}" target="_blank">
             <img src="images/project/home_icon.svg" alt="home_icon">
             <p>사이트 바로가기</p>
           </a>

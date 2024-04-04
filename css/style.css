@@ -558,6 +558,11 @@ nav a.active{color: var(--nomalColor);}
   font-weight: 700;
 }
 
+.image_box>img{
+  width: 265px;
+  border: 3px solid var(--nomalColor);
+}
+
 .modal_contents_right{
   display: flex;
   font-family: var(--pretendard-font);
