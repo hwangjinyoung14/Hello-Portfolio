@@ -30,7 +30,7 @@ const bestSleep = {
   projectDesc : "기존 홈페이지에서 브랜드 방향성을 반영하지 못한 레이아웃 구성과 주된 타겟층인<br>젊은 층을 고려하지 않은 노후되고 트렌디하지 않은 디자인을 보완 및 개선하여<br>베스트슬립이 추구하는 홈페이지를 구축하는 데 목적을 두었습니다. 또한 시각적으로<br>볼거리가 풍부한 섹션을 추가하기 위해 지도 API와 Swiper 라이브러리를 사용했습니다.",
   projectDesc2 :["3명(기여도35%)", "기획/개발", "Visual Studio Code, 피그마"],
   skills : ["HTML5", "SCSS", "JavaScript"],
-  address : ["https://github.com/hwangjinyoung14/sidmool.git", "https://hwangjinyoung14.github.io/sidmool/"],
+  address : ["https://rbska9810.github.io/project-bestSleep/", "https://rbska9810.github.io/project-bestSleep/"],
   images : "images/project/mockup3.png"
 }
 
