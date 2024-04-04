@@ -1,4 +1,3 @@
-
 function subTitle5(){
   const bubbleTyping5 = document.querySelector(".bubble_typing5");
   // 글자 모음 - 개행문자(\n)로 줄바꿈
@@ -42,19 +41,19 @@ function contactScroll(){
     const contact = document.querySelector('.contact');
     const contactCard = document.querySelector('.contact_card');
     const contactTOP = contact.offsetTop;
-
-
-    window.addEventListener('scroll', function() {
-      if(window.scrollY >= contactTOP) {
+  
+    // project scroll
+    window.addEventListener('scroll',function(){
+      if(windowSection.scrollY >= contactTOP){
         speechBubble5.classList.add('view_bubble5');
         contactCard.classList.add('cardUp_ani');
         setTimeout(subTitle5, 300);
-      } else {
+      } else{
         speechBubble5.classList.remove('view_bubble5');
         contactCard.classList.remove('cardUp_ani');
         bubbleTyping5.innerHTML = '';
       }
-    });
+      });
   });
 }
 
