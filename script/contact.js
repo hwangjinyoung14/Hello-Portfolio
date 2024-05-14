@@ -41,6 +41,7 @@ function contactScroll(){
     const contact = document.querySelector('.contact');
     const contactCard = document.querySelector('.contact_card');
     const contactTOP = contact.offsetTop;
+    console.log(contactTOP, windowSection.scrollY)
   
     // project scroll
     window.addEventListener('scroll',function(){
@@ -48,7 +49,7 @@ function contactScroll(){
         speechBubble5.classList.add('view_bubble5');
         contactCard.classList.add('cardUp_ani');
         setTimeout(subTitle5, 300);
-      } else{
+      }else{
         speechBubble5.classList.remove('view_bubble5');
         contactCard.classList.remove('cardUp_ani');
         bubbleTyping5.innerHTML = '';

@@ -53,45 +53,4 @@ function on_indicator(){
     `;
 }
 
-/* 끝을 감지하여 그 이후에 세로 스크롤을 적용하는 로직*/
-// document.addEventListener('wheel', function (event) {
-// if (Math.abs(event.deltaX) > Math.abs(event.deltaY)) {
-//     event.preventDefault(); 
-
-//     if (!enableVerticalScroll) { 
-//         if (event.deltaX < 0) {
-//             enableVerticalScroll();
-//         } else if (event.deltaX > 0 && isVerticalScrollEnabled()) {
-//             disableVerticalScroll();
-//         }
-//     }
-//     } else {
-//         if (!enableVerticalScroll) { 
-//             if (event.deltaY > 0) { 
-//                 if (currentSectionIndex === sections.length - 1) {
-//                     return;
-//                 }
-//                 scrollToNextSection(); 
-//             } else {
-//                 scrollToPreviousSection();
-//             }
-//             setTimeout(function () {
-//                 enableVerticalScroll = true;
-//             }, 1000);
-//         }
-//     }
-// });
-
-// function enableVerticalScroll() {
-// document.body.style.overflowY = 'auto';
-// document.body.style.overflowX = 'hidden';
-// }
-
-// function disableVerticalScroll() {
-// document.body.style.overflowY = 'hidden';
-// }
-
-// function isVerticalScrollEnabled() {
-// return document.body.style.overflowY === 'auto';
-// }
 

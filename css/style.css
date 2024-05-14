@@ -50,6 +50,7 @@ section{
   height: 100vh;
   max-width: 1920px;
   margin: auto;
+  box-sizing: border-box;
 }
 
 /* nav */
@@ -421,6 +422,7 @@ nav a.active{color: var(--nomalColor);}
   width: 337px;
   height: 100%;
   background: url(../images/intro/gif03.gif) no-repeat center center;
+  background-size: cover;
 }
 
 .about_me_right{
@@ -530,7 +532,7 @@ nav a.active{color: var(--nomalColor);}
   transform: translateX(-50%);
   padding: 41px 51px;
   box-sizing: border-box;
-  background: url(../images/about_me/modal_bg.png) no-repeat center center;
+  background: url(../images/about_me/modal_bg.png?version=1) no-repeat center center;
   z-index: 30;
 }
 
@@ -538,6 +540,7 @@ nav a.active{color: var(--nomalColor);}
   position: absolute;
   right: 20px;
   transition: .3s;
+  cursor: pointer;
 }
 
 .modal_close_btn:hover{
@@ -556,6 +559,7 @@ nav a.active{color: var(--nomalColor);}
   margin-bottom: 0.6rem;
   font-size: 20px;
   font-weight: 700;
+  color: var(--mainColor);
 }
 
 .image_box>img{
@@ -698,6 +702,7 @@ nav a.active{color: var(--nomalColor);}
 /* project */
 .project{
   background: url(../images/project/bg.png) no-repeat center center;
+  background-size: cover;
   padding-top: 1px;
   font-family: var(--pretendard-font);
 }
@@ -905,6 +910,11 @@ nav a.active{color: var(--nomalColor);}
   background: url(../images/project/list_bg4.svg) no-repeat center center;
 }
 
+.project_nav li:nth-child(5){
+  width: 104px;
+  background: url(../images/project/list_bg3.svg) no-repeat center center;
+}
+
 .project_nav_pointer{
   opacity: 0;
   visibility: hidden;
@@ -920,7 +930,8 @@ nav a.active{color: var(--nomalColor);}
 
 /* sub_project */
 .side_project{
-  background:url(../images/side_project/bg.png);
+  background:url(../images/side_project/bg.png) no-repeat center center;
+  background-size: cover;
   transition:1s;
   position: relative;
   cursor: pointer;
@@ -1131,7 +1142,8 @@ nav a.active{color: var(--nomalColor);}
 #indi_bar{
   position:absolute;
   left:0;top:0;
-  height:100%;width:100%;
+  height:100%;
+  width:100%;
   background:var(--mainColor);
   clip-path:polygon(0% 0%, 10px 0%, 10px 100%, 0% 100%);
   transition:all .2s;}
@@ -1139,7 +1151,6 @@ nav a.active{color: var(--nomalColor);}
   /* contact */
   .contact{
     position: relative;
-    padding-top: 2rem;
   }
 
   .contact>.fixe_box{

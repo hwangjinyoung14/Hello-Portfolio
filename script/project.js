@@ -1,4 +1,4 @@
-const sidmool = {
+ const sidmool = {
   topTitle : "개인 프로젝트",
   date : "2023.10 - 2023.11",
   projectNum : "PROJECT 01",
@@ -7,19 +7,19 @@ const sidmool = {
   projectDesc2 :["1명(기여도100%)", "기획/개발", "Visual Studio Code, 피그마"],
   skills : ["HTML5", "CSS3"],
   address : ["https://github.com/hwangjinyoung14/sidmool.git", "https://hwangjinyoung14.github.io/sidmool/"],
-  images : "images/project/mockup.png"
+  images : "images/project/mockup.png?version=1"
 }
 
 const animalSystem = {
   topTitle : "개인 프로젝트",
-  date : "2023.11 - 2023.12",
+  date : "2024.01. - 2024.02",
   projectNum : "PROJECT 02",
   projectTitle : "동물보호시스템",
   projectDesc : "기존 동물보호시스템 페이지에서 느껴지는 딱딱한 분위기를 동적이고 포근한 분위기로<br>바꾸는 데 중점을 두었으며, 정보 전달의 중요도 분석을 통한 레이아웃 재구성으로<br>사용자에게 기능성 및 편리성을 제공하고자 했습니다. CSS 키프레임으로<br>메인 비주얼의 애니메이션을 구현하고 JavaScript의 이벤트리스너를<br> 활용하여 모달창과 탭메뉴 등을 구현하였습니다.",
   projectDesc2 :["1명(기여도100%)", "기획/개발", "Visual Studio Code, 피그마"],
   skills : ["HTML5", "CSS3", "JavaScript"],
-  address : ["https://github.com/hwangjinyoung14/sidmool.git", "https://hwangjinyoung14.github.io/sidmool/"],
-  images : "images/project/mockup2.png"
+  address : ["https://github.com/hwangjinyoung14/animal.git", "https://hwangjinyoung14.github.io/animal/"],
+  images : "images/project/mockup2.png?version=1"
 }
 
 const bestSleep = {
@@ -30,8 +30,8 @@ const bestSleep = {
   projectDesc : "기존 홈페이지에서 브랜드 방향성을 반영하지 못한 레이아웃 구성과 주된 타겟층인<br>젊은 층을 고려하지 않은 노후되고 트렌디하지 않은 디자인을 보완 및 개선하여<br>베스트슬립이 추구하는 홈페이지를 구축하는 데 목적을 두었습니다. 또한 시각적으로<br>볼거리가 풍부한 섹션을 추가하기 위해 지도 API와 Swiper 라이브러리를 사용했습니다.",
   projectDesc2 :["3명(기여도35%)", "기획/개발", "Visual Studio Code, 피그마"],
   skills : ["HTML5", "SCSS", "JavaScript"],
-  address : ["https://rbska9810.github.io/project-bestSleep/", "https://rbska9810.github.io/project-bestSleep/"],
-  images : "images/project/mockup3.png"
+  address : ["https://github.com/hwangjinyoung14/best-sleep.git", "https://hwangjinyoung14.github.io/best-sleep/"],
+  images : "images/project/mockup3.png?version=1"
 }
 
 const cpgn = {
@@ -42,8 +42,20 @@ const cpgn = {
   projectDesc : "사용자에게 더 나은 환경 서비스를 제공하기 위해 프로젝트를 제작했습니다.<br>불필요한 섹션은 과감히 삭제하고 장바구니 넣기, 다양한 체험 및 프로그램 생사를<br>꼼파뇨가 추구하는 홈페이지를 구축하는 데 목적을 두었습니다.또한 꼼파뇨 상세페이지<br>추가하여 전체적인 홈페이지 가독성을 높이고자 했으며 기본에 충실했습니다.",
   projectDesc2 :["1명(기여도100%)", "기획/개발", "Visual Studio Code, 피그마"],
   skills : ["React"],
-  address : ["https://github.com/hwangjinyoung14/sidmool.git", "https://hwangjinyoung14.github.io/sidmool/"],
-  images : "images/project/mockup4.png"
+  address : ["https://github.com/hwangjinyoung14/cpgn-studio.git", "https://mellifluous-meringue-b210b7.netlify.app/"],
+  images : "images/project/mockup4.png?version=1"
+}
+
+const sinjeon = {
+  topTitle : "개인 프로젝트",
+  date : "2024.04 - 2024.05",
+  projectNum : "PROJECT 05",
+  projectTitle : "신전떡볶이",
+  projectDesc : "신전떡볶이가 브랜드 리뉴얼을 진행했으나, 아직 홈페이지의 모바일 및 반응형이<br>구축되지 않은 부분을 고려하여 모바일이 우선되는 원페이지 홈페이지를 제작했습니다.<br>새롭게 선정된 캐릭터, 로고, 그리고 브랜드 색깔을 활용하여 신전떡볶이의<br>아이덴티티를 적극적으로 반영했습니다.",
+  projectDesc2 :["1명(기여도100%)", "기획/개발", "Visual Studio Code, 피그마"],
+  skills : ["HTML5", "CSS3", "jQuery"],
+  address : ["https://github.com/hwangjinyoung14/sinjeon.git", "https://hwangjinyoung14.github.io/sinjeon/"],
+  images : "images/project/mockup5.png?version=1"
 }
 
 function projectInner(item) {
@@ -122,6 +134,10 @@ projectNav.forEach(function(item, index) {
       case 3:
         projectWrapText.innerHTML = projectInner(cpgn);
         project.style.backgroundImage = `url(./images/project/bg4.png)`;
+        break;
+      case 4:
+        projectWrapText.innerHTML = projectInner(sinjeon);
+        project.style.backgroundImage = `url(./images/project/bg5.png)`;
         break;
       default:
     }

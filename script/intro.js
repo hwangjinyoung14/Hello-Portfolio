@@ -113,7 +113,7 @@ function intro02(){
   const theji = document.querySelector(".intro_desc2_images");
 
   entering.addEventListener('click', function(){
-    bgChange.innerHTML = `<img src="images/intro/gif02.gif" alt="gif02">`;
+    bgChange.innerHTML = `<img src="images/intro/gif02.gif?version=1" alt="gif02">`;
     speechBubble.classList.add('gone_ani2');
     typing.classList.add('gone_ani');
     theji.classList.add('intro2_ani');
@@ -234,7 +234,7 @@ function introLast(){
     ticketAni.classList.add('release');
     ticketAni2.classList.add('release2');
     //인사를 좀 늦게하는 gif 만들기
-    thejiImages.innerHTML = `<img src="images/intro/gif05.gif" alt="gif05">`;
+    thejiImages.innerHTML = `<img src="images/intro/gif05.gif?version=1" alt="gif05">`;
     speechBubble3.style.display = 'none';
 
     setTimeout(() => {
