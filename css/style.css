@@ -320,10 +320,15 @@ nav a.active{color: var(--nomalColor);}
   left: 2px;
 }
 
+.ticket_ani{
+  cursor: pointer;
+}
+
 .ticket_ani2{
   display: none;
   transform: translate(482px, -327px);
 }
+
 
 .ticket_ani2.release2{
   display: block;
