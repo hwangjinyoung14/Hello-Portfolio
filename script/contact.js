@@ -2,7 +2,7 @@ function subTitle5(){
   const bubbleTyping5 = document.querySelector(".bubble_typing5");
   // 글자 모음 - 개행문자(\n)로 줄바꿈
   const letters = [
-    "감사합니다. ^^ \n 다음에 또 놀러 와주세요!"
+    "감사합니다. ^^ \n 다음에 또 방문해 주세요!"
   ];
   
   // 글자 입력 속도

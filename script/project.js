@@ -121,23 +121,23 @@ projectNav.forEach(function(item, index) {
     switch(index) {
       case 0:
         projectWrapText.innerHTML = projectInner(sidmool);
-        project.style.backgroundImage = `url(./images/project/bg.png)`;
+        project.style.backgroundImage = `url(./images/project/bg.png?version=1)`;
         break;
       case 1:
         projectWrapText.innerHTML = projectInner(animalSystem);
-        project.style.backgroundImage = `url(./images/project/bg2.png)`;
+        project.style.backgroundImage = `url(./images/project/bg2.png?version=1)`;
         break;
       case 2:
         projectWrapText.innerHTML = projectInner(bestSleep);
-        project.style.backgroundImage = `url(./images/project/bg3.png)`;
+        project.style.backgroundImage = `url(./images/project/bg3.png?version=1)`;
         break;
       case 3:
         projectWrapText.innerHTML = projectInner(cpgn);
-        project.style.backgroundImage = `url(./images/project/bg4.png)`;
+        project.style.backgroundImage = `url(./images/project/bg4.png?version=1)`;
         break;
       case 4:
         projectWrapText.innerHTML = projectInner(sinjeon);
-        project.style.backgroundImage = `url(./images/project/bg5.png)`;
+        project.style.backgroundImage = `url(./images/project/bg5.png?version=1)`;
         break;
       default:
     }
